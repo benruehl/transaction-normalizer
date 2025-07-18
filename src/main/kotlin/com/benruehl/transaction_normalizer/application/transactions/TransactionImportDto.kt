@@ -8,7 +8,7 @@ data class TransactionImportDto(
     val amount: BigDecimal,
     val currency: String,
     val purpose: String? = null,
-    val transactionCode: String,
+    val transactionCode: String? = null,
     val creditorName: String? = null,
     val creditorIban: String? = null,
     val debtorName: String? = null,
