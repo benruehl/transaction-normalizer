@@ -19,7 +19,7 @@ class TransactionImportService(
 
     fun import(customerId: String, transactions: Flux<TransactionImportDto>): Mono<Void> {
         return transactions.flatMap {
-            transactionRepository.insert(customerId, it.mapToEntity())
+            transactionRepository.save(customerId, it.mapToEntity())
         }.then()
     }
 

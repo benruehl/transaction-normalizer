@@ -4,5 +4,5 @@ import com.benruehl.transaction_normalizer.domain.entities.Transaction
 import reactor.core.publisher.Mono
 
 interface TransactionRepository {
-    fun insert(customerId: String, transaction: Transaction): Mono<Transaction>
+    fun save(customerId: String, transaction: Transaction): Mono<Transaction>
 }
