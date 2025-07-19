@@ -13,6 +13,10 @@ class PurposeNormalizer : TransactionNormalizer<String> {
     }
 
     override fun getTargetPropertyValue(transaction: TransactionImportDto): String {
-        return transaction.purpose ?: ""
+        val purposeParts = transaction.purpose?.split("+")
+        val relevantPurpose = purposeParts?.last() ?: transaction.purpose ?: ""
+        return relevantPurpose
+
+        // TODO: apply natural letter casing, e.g. 'ONLINE ÜBERWEISUNG' -> 'Online Überweisung'
     }
 }
