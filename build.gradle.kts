@@ -29,11 +29,16 @@ dependencies {
 	// https://github.com/spring-projects/spring-framework/issues/20256
 	implementation("jakarta.xml.bind:jakarta.xml.bind-api:3.0.1")
 	runtimeOnly("org.glassfish.jaxb:jaxb-runtime:3.0.1")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude(module = "mockito-core")
+	}
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testImplementation("com.ninja-squad:springmockk:4.0.2")
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 kotlin {
