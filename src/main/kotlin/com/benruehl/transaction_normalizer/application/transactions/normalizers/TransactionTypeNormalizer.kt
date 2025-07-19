@@ -6,6 +6,8 @@ import com.benruehl.transaction_normalizer.domain.entities.Transaction
 import com.benruehl.transaction_normalizer.domain.entities.TransactionType
 import com.benruehl.transaction_normalizer.domain.entities.TransactionType.*
 import org.springframework.stereotype.Component
+import reactor.core.publisher.Mono
+import reactor.kotlin.core.publisher.toMono
 import kotlin.reflect.KProperty1
 
 @Component
@@ -14,7 +16,7 @@ class TransactionTypeNormalizer : TransactionNormalizer<TransactionType> {
         return Transaction::transactionType
     }
 
-    override fun getTargetPropertyValue(transaction: TransactionImportDto): TransactionType {
+    override fun getTargetPropertyValue(transaction: TransactionImportDto): Mono<TransactionType> {
         return transaction.transactionCode.orEmpty().let {
             when {
                 it.startsWith("PMNT-DDOC") -> DIRECT_DEBIT
@@ -24,6 +26,6 @@ class TransactionTypeNormalizer : TransactionNormalizer<TransactionType> {
                 it.startsWith("PMNT-ICDT") -> DIGITAL_PURCHASE
                 else -> UNKNOWN
             }
-        }
+        }.toMono()
     }
 }

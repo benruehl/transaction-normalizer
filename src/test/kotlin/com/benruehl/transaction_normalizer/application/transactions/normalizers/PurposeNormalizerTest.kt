@@ -14,7 +14,7 @@ class PurposeNormalizerTest {
         val normalizer = PurposeNormalizer()
 
         // Act
-        val normalizedValue = normalizer.getTargetPropertyValue(givenPurpose)
+        val normalizedValue = normalizer.getTargetPropertyValue(givenPurpose).block()
 
         // Assert
         assertEquals(expectedPurpose, normalizedValue)

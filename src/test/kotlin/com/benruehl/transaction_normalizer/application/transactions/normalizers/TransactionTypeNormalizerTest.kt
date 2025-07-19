@@ -18,7 +18,7 @@ class TransactionTypeNormalizerTest {
         val normalizer = TransactionTypeNormalizer()
 
         // Act
-        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it) }
+        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it).block() }
 
         // Assert
         normalizedValues.forEach {
@@ -37,7 +37,7 @@ class TransactionTypeNormalizerTest {
         val normalizer = TransactionTypeNormalizer()
 
         // Act
-        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it) }
+        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it).block() }
 
         // Assert
         normalizedValues.forEach {
@@ -58,7 +58,7 @@ class TransactionTypeNormalizerTest {
         val normalizer = TransactionTypeNormalizer()
 
         // Act
-        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it) }
+        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it).block() }
 
         // Assert
         normalizedValues.forEach {
@@ -76,7 +76,7 @@ class TransactionTypeNormalizerTest {
         val normalizer = TransactionTypeNormalizer()
 
         // Act
-        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it) }
+        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it).block() }
 
         // Assert
         normalizedValues.forEach {
@@ -94,7 +94,7 @@ class TransactionTypeNormalizerTest {
         val normalizer = TransactionTypeNormalizer()
 
         // Act
-        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it) }
+        val normalizedValues = givenTransactions.map { normalizer.getTargetPropertyValue(it).block() }
 
         // Assert
         normalizedValues.forEach {

@@ -7,6 +7,8 @@ import com.benruehl.transaction_normalizer.domain.repositories.TransactionReposi
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import reactor.kotlin.core.publisher.toFlux
+import reactor.kotlin.core.publisher.toMono
 
 @Service
 class TransactionImportService(
@@ -18,12 +20,13 @@ class TransactionImportService(
     }
 
     fun import(customerId: String, transactions: Flux<TransactionImportDto>): Mono<Void> {
-        return transactions.flatMap {
-            transactionRepository.save(customerId, it.mapToEntity())
-        }.then()
+        return transactions
+            .flatMap { it.mapToEntity() }
+            .flatMap { transactionRepository.save(customerId, it) }
+            .then()
     }
 
-    private fun TransactionImportDto.mapToEntity(): Transaction {
+    private fun TransactionImportDto.mapToEntity(): Mono<Transaction> {
         val nonNormalizedTransaction = Transaction(
             date = bookingDate,
             amount = amount,
@@ -34,14 +37,14 @@ class TransactionImportService(
             normalizedPurpose = "",
             bank = "",
             transactionType = TransactionType.DIRECT_DEBIT,
-        )
+        ).toMono()
 
-        return normalizers.fold(nonNormalizedTransaction) { foldedTransaction, nextNormalizer ->
-            setDataclassProperty(
-                foldedTransaction,
-                nextNormalizer.getTargetProperty(),
-                nextNormalizer.getTargetPropertyValue(this)
-            )
+        return normalizers.fold (nonNormalizedTransaction) { reducedTransaction, nextNormalizer ->
+            reducedTransaction.flatMap { transaction ->
+                nextNormalizer.getTargetPropertyValue(this).map {
+                    setDataclassProperty(transaction, nextNormalizer.getTargetProperty(), it)
+                }
+            }
         }
     }
 }
