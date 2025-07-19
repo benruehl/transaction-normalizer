@@ -3,7 +3,9 @@ package com.benruehl.transaction_normalizer.application.transactions
 import com.benruehl.transaction_normalizer.domain.repositories.TransactionRepository
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.spyk
 import io.mockk.verify
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -26,7 +28,24 @@ class TransactionImportServiceTest {
     }
 
     @Test
-    fun `import should call normalizers and assign normalized values`() {
+    fun `import should call all normalizers`() {
+        // Arrange
+        val spiedNormalizers = normalizers.map { spyk(it) }
+        val service = TransactionImportService(transactionRepositoryMock, spiedNormalizers)
+        val dataToImport = listOf(aTransactionImportDto()).toFlux()
+
+        // Act
+        service.import("1", dataToImport).block()
+
+        // Arrange
+        assertThat(normalizers).isNotEmpty
+        spiedNormalizers.forEach {
+            verify { it.getTargetPropertyValue(any()) }
+        }
+    }
+
+    @Test
+    fun `import should assign normalized values`() {
         // Arrange
         val service = TransactionImportService(transactionRepositoryMock, normalizers)
         val dataToImport = listOf(aTransactionImportDto()).toFlux()
