@@ -1,12 +1,21 @@
 package com.benruehl.transaction_normalizer.infrastructure.frankfurter
 
+import com.github.tomakehurst.wiremock.client.WireMock.exactly
 import com.github.tomakehurst.wiremock.client.WireMock.stubFor
 import com.github.tomakehurst.wiremock.client.WireMock.get
+import com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor
 import com.github.tomakehurst.wiremock.client.WireMock.okJson
+import com.github.tomakehurst.wiremock.client.WireMock.resetAllRequests
+import com.github.tomakehurst.wiremock.client.WireMock.resetAllScenarios
+import com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo
+import com.github.tomakehurst.wiremock.client.WireMock.verify
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
 import org.wiremock.spring.EnableWireMock
+import reactor.kotlin.core.publisher.toFlux
 import reactor.test.StepVerifier
 
 @SpringBootTest
@@ -38,6 +47,56 @@ class FrankfurterClientTest(
                 it.rates.isNotEmpty()
             }
             .verifyComplete()
+    }
+
+    @Test
+    fun `should hit cache on subsequent requests for same base currency`() {
+        // Arrange
+        val baseCurrency = "EUR"
+        val date = "2025-01-01"
+        val frankfurterResponseMock = aFrankurterResponse(baseCurrency, date)
+        val client = FrankfurterClient(wireMockUrl)
+        stubFor(
+            get("/v1/latest?base=$baseCurrency")
+                .willReturn(okJson(frankfurterResponseMock))
+        )
+
+        // Act
+        client.fetchCurrencyRates()
+            .flatMap { client.fetchCurrencyRates() }
+            .block()
+
+        // Assert
+        verify(
+            exactly(1),
+            getRequestedFor(urlEqualTo("/v1/latest?base=$baseCurrency"))
+        )
+    }
+
+    @Test
+    fun `should not hit cache for different base currencies`() {
+        // Arrange
+        val baseCurrencies = listOf("EUR", "USD")
+        val date = "2025-01-01"
+        val frankfurterResponseMocks = baseCurrencies.associateWith { aFrankurterResponse(it, date) }
+        val client = FrankfurterClient(wireMockUrl)
+        frankfurterResponseMocks.forEach {
+            val (baseCurrency, responseMock) = it
+            stubFor(
+                get("/v1/latest?base=$baseCurrency")
+                    .willReturn(okJson(responseMock))
+            )
+        }
+
+        // Act
+        baseCurrencies.toFlux().flatMap {
+            client.fetchCurrencyRates(it)
+        }.blockLast()
+
+        // Assert
+        baseCurrencies.forEach {
+            verify(exactly(1), getRequestedFor(urlEqualTo("/v1/latest?base=$it")))
+        }
     }
 
     fun aFrankurterResponse(baseCurrency: String, date: String): String {
