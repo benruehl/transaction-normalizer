@@ -4,6 +4,7 @@ import com.benruehl.transaction_normalizer.application.transactions.dto.CamtDocu
 import com.benruehl.transaction_normalizer.application.transactions.TransactionService
 import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
 import com.benruehl.transaction_normalizer.domain.entities.Transaction
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,6 +21,7 @@ import reactor.core.publisher.Mono
 class TransactionController(
     val transactionService: TransactionService
 ) {
+    private val logger = KotlinLogging.logger {}
 
     @PostMapping(
         "/upload",
@@ -32,6 +34,8 @@ class TransactionController(
     ): Mono<ResponseEntity<Void>> {
         return transactionService.import(customerId, transactions)
             .thenReturn(ResponseEntity.ok().build<Void>())
+            .doOnNext { logger.info { "Imported transactions from JSON for customer $customerId" } }
+            .doOnError { logger.error(it) { "Failed to import transactions from JSON for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
 
@@ -46,6 +50,8 @@ class TransactionController(
     ): Mono<ResponseEntity<Void>> {
         return transactionService.import(customerId, camtDocument)
             .thenReturn(ResponseEntity.ok().build<Void>())
+            .doOnNext { logger.info { "Imported transactions from XML for customer $customerId" } }
+            .doOnError { logger.error(it) { "Failed to import transactions from XML for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
 
@@ -54,6 +60,8 @@ class TransactionController(
         return transactionService.query(customerId)
             .collectList()
             .map { ResponseEntity.ok().body(it) }
+            .doOnNext { logger.info { "Queried transactions for customer $customerId" } }
+            .doOnError { logger.error(it) { "Failed to query transactions for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
 }

@@ -25,6 +25,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
+	implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
 	// Spring WebFlux does not support XML request bodies
 	// but JAXB can be used as a workaround, see:
 	// https://github.com/spring-projects/spring-framework/issues/20256

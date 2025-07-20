@@ -3,6 +3,7 @@ package com.benruehl.transaction_normalizer.infrastructure.frankfurter
 import com.benruehl.transaction_normalizer.application.ports.CurrencyClient
 import com.benruehl.transaction_normalizer.application.ports.CurrencyRates
 import com.github.benmanes.caffeine.cache.Caffeine
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
@@ -17,6 +18,8 @@ class FrankfurterClient(
     private val baseUrl: String = "https://frankfurter.dev/"
 ) : CurrencyClient {
 
+    private val logger = KotlinLogging.logger {}
+
     private val webClient: WebClient by lazy { WebClient.create(baseUrl) }
 
     private val cache = Caffeine.newBuilder()
@@ -26,6 +29,7 @@ class FrankfurterClient(
 
     override fun fetchCurrencyRates(baseCurrency: String): Mono<CurrencyRates> {
         cache.getIfPresent(baseCurrency)?.let {
+            logger.info { "Retrieved currency rates for $baseCurrency from cache" }
             return Mono.just(it)
         }
         return webClient.get()
@@ -34,9 +38,10 @@ class FrankfurterClient(
             .retrieve()
             .bodyToMono<FrankfurterResponse>()
             .map { it.toCurrencyRates() }
-            .doOnNext { /* TODO: logging */ }
+            .doOnNext { logger.info { "Fetched currency rates for $baseCurrency" } }
             .doOnNext { cache.put(baseCurrency, it) }
             .timeout(Duration.ofSeconds(1))
+            .doOnError { logger.error(it) { "Failed to fetch currency rates for $baseCurrency" } }
     }
 }
 
