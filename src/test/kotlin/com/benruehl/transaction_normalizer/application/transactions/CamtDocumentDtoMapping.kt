@@ -1,5 +1,8 @@
 package com.benruehl.transaction_normalizer.application.transactions
 
+import com.benruehl.transaction_normalizer.application.transactions.dto.CamtDocument
+import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
+import com.benruehl.transaction_normalizer.application.transactions.dto.mapToTransactionImportDtos
 import jakarta.xml.bind.JAXBContext
 import jakarta.xml.bind.Unmarshaller
 import org.junit.jupiter.api.Test

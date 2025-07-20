@@ -1,8 +1,8 @@
 package com.benruehl.transaction_normalizer.api.controllers
 
-import com.benruehl.transaction_normalizer.application.transactions.CamtDocument
+import com.benruehl.transaction_normalizer.application.transactions.dto.CamtDocument
 import com.benruehl.transaction_normalizer.application.transactions.TransactionImportService
-import com.benruehl.transaction_normalizer.application.transactions.TransactionImportDto
+import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable

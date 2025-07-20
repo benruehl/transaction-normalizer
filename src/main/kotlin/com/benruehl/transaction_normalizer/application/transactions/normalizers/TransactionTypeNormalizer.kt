@@ -1,6 +1,6 @@
 package com.benruehl.transaction_normalizer.application.transactions.normalizers
 
-import com.benruehl.transaction_normalizer.application.transactions.TransactionImportDto
+import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
 import com.benruehl.transaction_normalizer.application.transactions.TransactionNormalizer
 import com.benruehl.transaction_normalizer.domain.entities.Transaction
 import com.benruehl.transaction_normalizer.domain.entities.TransactionType

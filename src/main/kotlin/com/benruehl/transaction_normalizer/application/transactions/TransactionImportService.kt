@@ -1,5 +1,8 @@
 package com.benruehl.transaction_normalizer.application.transactions
 
+import com.benruehl.transaction_normalizer.application.transactions.dto.CamtDocument
+import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
+import com.benruehl.transaction_normalizer.application.transactions.dto.mapToTransactionImportDtos
 import com.benruehl.transaction_normalizer.application.utils.setDataclassProperty
 import com.benruehl.transaction_normalizer.domain.entities.Transaction
 import com.benruehl.transaction_normalizer.domain.entities.TransactionType
@@ -7,7 +10,6 @@ import com.benruehl.transaction_normalizer.domain.repositories.TransactionReposi
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import reactor.kotlin.core.publisher.toFlux
 import reactor.kotlin.core.publisher.toMono
 
 @Service

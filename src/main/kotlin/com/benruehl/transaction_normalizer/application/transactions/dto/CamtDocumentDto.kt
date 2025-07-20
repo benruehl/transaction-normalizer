@@ -1,4 +1,4 @@
-package com.benruehl.transaction_normalizer.application.transactions
+package com.benruehl.transaction_normalizer.application.transactions.dto
 
 import java.math.BigDecimal
 import jakarta.xml.bind.annotation.*

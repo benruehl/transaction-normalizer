@@ -1,4 +1,4 @@
-package com.benruehl.transaction_normalizer.application.transactions
+package com.benruehl.transaction_normalizer.application.transactions.dto
 
 import reactor.core.publisher.Flux
 import reactor.kotlin.core.publisher.toFlux

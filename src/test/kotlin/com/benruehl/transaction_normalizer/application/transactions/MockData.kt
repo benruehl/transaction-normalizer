@@ -1,5 +1,6 @@
 package com.benruehl.transaction_normalizer.application.transactions
 
+import com.benruehl.transaction_normalizer.application.transactions.dto.TransactionImportDto
 import java.math.BigDecimal
 
 fun aTransactionImportDto(): TransactionImportDto {
