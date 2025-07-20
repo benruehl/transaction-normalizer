@@ -21,7 +21,11 @@ class InMemoryTransactionRepository : TransactionRepository {
         return Mono.just(transaction)
     }
 
-    fun findByCustomerId(customerId: String): Flux<Transaction> {
+    override fun findAll(customerId: String): Flux<Transaction> {
         return (db[customerId] ?: emptyList()).toFlux()
+    }
+
+    fun deleteAll() {
+        db.clear()
     }
 }

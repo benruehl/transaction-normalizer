@@ -1,19 +1,33 @@
 package com.benruehl.transaction_normalizer.api.controllers
 
+import com.benruehl.transaction_normalizer.domain.entities.Transaction
+import com.benruehl.transaction_normalizer.domain.entities.TransactionType
+import com.benruehl.transaction_normalizer.infrastructure.persistence.InMemoryTransactionRepository
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
 import org.springframework.http.MediaType
 import org.springframework.test.web.reactive.server.WebTestClient
+import java.math.BigDecimal
 
 @SpringBootTest
 class TransactionControllerTest {
     private lateinit var client: WebTestClient
 
+    @Autowired
+    lateinit var transactionRepository: InMemoryTransactionRepository
+
     @BeforeEach
     fun setup(context: ApplicationContext) {
         client = WebTestClient.bindToApplicationContext(context).build()
+    }
+
+    @AfterEach
+    fun afterEach() {
+        transactionRepository.deleteAll()
     }
 
     @Test
@@ -84,5 +98,33 @@ class TransactionControllerTest {
             """.trimIndent())
             .exchange()
             .expectStatus().isOk
+    }
+
+    @Test
+    fun `query should return 200 when transactions exist`() {
+        // Arrange
+        val existingTransaction = aTransaction().copy(date = "2025-10-10")
+        transactionRepository.save("1", existingTransaction).block()
+
+        // Act + Assert
+        client.get().uri("/customers/1/transactions/normalized")
+            .exchange()
+            .expectStatus().isOk
+            .expectBody()
+            .jsonPath("$[0].date").isEqualTo("2025-10-10")
+    }
+
+    private fun aTransaction(): Transaction {
+        return Transaction(
+            date = "2025-01-01",
+            amount = BigDecimal("10.00"),
+            amountInEur = BigDecimal("10.00"),
+            currency = "EUR",
+            creditorIban = "iban",
+            creditorName = "creditor",
+            normalizedPurpose = "purpose",
+            bank = "bank",
+            transactionType = TransactionType.DIRECT_DEBIT
+        )
     }
 }

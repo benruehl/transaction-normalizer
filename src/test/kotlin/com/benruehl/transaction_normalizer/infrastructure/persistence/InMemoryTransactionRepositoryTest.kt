@@ -19,7 +19,7 @@ class InMemoryTransactionRepositoryTest {
         val storedData = transactions
             .flatMap { repository.save("1", it) }
             .collectList()
-            .flatMapMany { repository.findByCustomerId("1") }
+            .flatMapMany { repository.findAll("1") }
 
         // Assert
         StepVerifier.create(storedData)
@@ -39,8 +39,8 @@ class InMemoryTransactionRepositoryTest {
             .flatMap { repository.save("2", it) }
             .subscribe()
 
-        val storedDataForCustomer1 = repository.findByCustomerId("1")
-        val storedDataForCustomer2 = repository.findByCustomerId("2")
+        val storedDataForCustomer1 = repository.findAll("1")
+        val storedDataForCustomer2 = repository.findAll("2")
 
         // Assert
         StepVerifier.create(storedDataForCustomer1)
@@ -63,11 +63,38 @@ class InMemoryTransactionRepositoryTest {
             .flatMap { repository.save("1", it) }
             .flatMap { repository.save("1", it) }
             .collectList()
-            .flatMapMany { repository.findByCustomerId("1") }
+            .flatMapMany { repository.findAll("1") }
 
         // Assert
         StepVerifier.create(storedData)
             .expectNextCount(6)
+            .verifyComplete()
+    }
+
+    @Test
+    fun `findAll should return transactions belonging to customer`() {
+        // Arrange
+        val repository = InMemoryTransactionRepository()
+        val transactionsForCustomer1 = listOf(aTransaction(), aTransaction()).toFlux()
+        val transactionsForCustomer2 = listOf(aTransaction(), aTransaction(), aTransaction()).toFlux()
+        transactionsForCustomer1
+            .flatMap { repository.save("1", it) }
+            .blockLast()
+        transactionsForCustomer2
+            .flatMap { repository.save("2", it) }
+            .blockLast()
+
+        // Act
+        val resultForCustomer1 = repository.findAll("1")
+        val resultForCustomer2 = repository.findAll("2")
+
+        // Assert
+        StepVerifier.create(resultForCustomer1)
+            .expectNextCount(2)
+            .verifyComplete()
+
+        StepVerifier.create(resultForCustomer2)
+            .expectNextCount(3)
             .verifyComplete()
     }
 

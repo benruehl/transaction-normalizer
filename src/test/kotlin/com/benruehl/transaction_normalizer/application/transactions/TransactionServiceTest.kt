@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toFlux
 
 @SpringBootTest
-class TransactionImportServiceTest {
+class TransactionServiceTest {
 
     @Autowired
     lateinit var normalizers: List<TransactionNormalizer<*>>
@@ -31,7 +31,7 @@ class TransactionImportServiceTest {
     fun `import should call all normalizers`() {
         // Arrange
         val spiedNormalizers = normalizers.map { spyk(it) }
-        val service = TransactionImportService(transactionRepositoryMock, spiedNormalizers)
+        val service = TransactionService(transactionRepositoryMock, spiedNormalizers)
         val dataToImport = listOf(aTransactionImportDto()).toFlux()
 
         // Act
@@ -47,7 +47,7 @@ class TransactionImportServiceTest {
     @Test
     fun `import should assign normalized values`() {
         // Arrange
-        val service = TransactionImportService(transactionRepositoryMock, normalizers)
+        val service = TransactionService(transactionRepositoryMock, normalizers)
         val dataToImport = listOf(aTransactionImportDto()).toFlux()
 
         // Act

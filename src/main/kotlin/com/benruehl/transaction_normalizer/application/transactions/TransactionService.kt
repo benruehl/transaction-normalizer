@@ -13,10 +13,14 @@ import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toMono
 
 @Service
-class TransactionImportService(
+class TransactionService(
     val transactionRepository: TransactionRepository,
     val normalizers: List<TransactionNormalizer<*>>
 ) {
+    fun query(customerId: String): Flux<Transaction> {
+        return transactionRepository.findAll(customerId)
+    }
+
     fun import(customerId: String, camtDocument: Mono<CamtDocument>): Mono<Void> {
         return import(customerId, camtDocument.flatMapMany { it.mapToTransactionImportDtos() })
     }
