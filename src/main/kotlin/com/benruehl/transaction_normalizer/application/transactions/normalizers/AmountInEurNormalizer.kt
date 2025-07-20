@@ -23,7 +23,7 @@ class AmountInEurNormalizer(
             return Mono.just(transaction.amount)
         }
         return currencyClient
-            .fetchCurrencyRates("EUR") // TODO: cache
+            .fetchCurrencyRates("EUR")
             .flatMap {
                 val rate = it.rates[transaction.currency]
                 if (rate != null) {
