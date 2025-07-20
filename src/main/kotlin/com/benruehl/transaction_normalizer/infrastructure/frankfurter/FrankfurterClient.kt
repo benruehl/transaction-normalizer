@@ -11,9 +11,11 @@ import java.math.BigDecimal
 import java.time.Duration
 
 @Service
-class FrankfurterClient : CurrencyClient {
+class FrankfurterClient(
+    private val baseUrl: String = "https://frankfurter.dev/"
+) : CurrencyClient {
 
-    private val webClient = WebClient.create("https://frankfurter.dev/")
+    private val webClient: WebClient by lazy { WebClient.create(baseUrl) }
 
     override fun fetchCurrencyRates(baseCurrency: String): Mono<CurrencyRates> {
         return webClient.get()
