@@ -7,6 +7,7 @@ import com.benruehl.transaction_normalizer.application.utils.setDataclassPropert
 import com.benruehl.transaction_normalizer.domain.entities.Transaction
 import com.benruehl.transaction_normalizer.domain.entities.TransactionType
 import com.benruehl.transaction_normalizer.domain.repositories.TransactionRepository
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
@@ -17,6 +18,8 @@ class TransactionService(
     val transactionRepository: TransactionRepository,
     val normalizers: List<TransactionNormalizer<*>>
 ) {
+    private val logger = KotlinLogging.logger {}
+
     fun query(customerId: String): Flux<Transaction> {
         return transactionRepository.findAll(customerId)
     }
@@ -29,6 +32,8 @@ class TransactionService(
         return transactions
             .flatMap { it.mapToEntity() }
             .flatMap { transactionRepository.save(customerId, it) }
+            .collectList()
+            .doOnNext { logger.info { "Imported ${it.count()} transactions for customer $customerId" } }
             .then()
     }
 

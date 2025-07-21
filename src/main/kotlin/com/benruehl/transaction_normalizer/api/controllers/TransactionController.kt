@@ -32,9 +32,10 @@ class TransactionController(
         @PathVariable customerId: String,
         @RequestBody transactions: Flux<TransactionImportDto>
     ): Mono<ResponseEntity<Void>> {
+        logger.info { "Start importing transactions from JSON for customer $customerId" }
         return transactionService.import(customerId, transactions)
             .thenReturn(ResponseEntity.ok().build<Void>())
-            .doOnNext { logger.info { "Imported transactions from JSON for customer $customerId" } }
+            .doOnNext { logger.info { "Finished importing transactions from JSON for customer $customerId" } }
             .doOnError { logger.error(it) { "Failed to import transactions from JSON for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
@@ -48,19 +49,21 @@ class TransactionController(
         @PathVariable customerId: String,
         @RequestBody camtDocument: Mono<CamtDocument>
     ): Mono<ResponseEntity<Void>> {
+        logger.info { "Start importing transactions from XML for customer $customerId" }
         return transactionService.import(customerId, camtDocument)
             .thenReturn(ResponseEntity.ok().build<Void>())
-            .doOnNext { logger.info { "Imported transactions from XML for customer $customerId" } }
+            .doOnNext { logger.info { "Finished importing transactions from XML for customer $customerId" } }
             .doOnError { logger.error(it) { "Failed to import transactions from XML for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
 
     @GetMapping("/normalized")
     fun query(@PathVariable customerId: String): Mono<ResponseEntity<List<Transaction>>> {
+        logger.info { "Start querying transactions for customer $customerId" }
         return transactionService.query(customerId)
             .collectList()
             .map { ResponseEntity.ok().body(it) }
-            .doOnNext { logger.info { "Queried transactions for customer $customerId" } }
+            .doOnNext { logger.info { "Finished querying transactions for customer $customerId" } }
             .doOnError { logger.error(it) { "Failed to query transactions for customer $customerId" } }
             .onErrorReturn(ResponseEntity.internalServerError().build())
     }
