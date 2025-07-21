@@ -50,6 +50,8 @@ The managing service calls all normalizers and assigns the returned values to th
 
 ### Testing
 
+Test data for manual testing: `/resources/test_data`
+
 - **JUnit** for running tests
 - **Mockk** for mocking
 - **Wiremock** for mocking external requests

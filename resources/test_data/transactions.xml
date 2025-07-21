@@ -1,0 +1,690 @@
+<?xml version="1.0" ?>
+<Document>
+  <BkToCstmrStmt>
+    <Stmt>
+      <Id>STATEMENT-ALL-30</Id>
+      <ElctrncSeqNb>1</ElctrncSeqNb>
+      <CreDtTm>2024-06-13T12:00:00</CreDtTm>
+      <Acct>
+        <Id>
+          <IBAN>DE44500105170648489890</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+      </Acct>
+      <Ntry>
+        <Amt Ccy="EUR">-85.12</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-05-28</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-05-27</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-ICDT-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Amazon EU SARL</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">2150.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-01</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-01</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>SVWX+GEHALT MAI 2024 MAX MUSTERMANN</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Musterfirma GmbH</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE89370400440532013000</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-69.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-05-27</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-05-27</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>SVWZ+H&amp;M ONLINE ÜBERWEISUNG 123456</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>H&amp;M Hennes &amp; Mauritz B.V. &amp; Co. KG</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE12500105170648489890</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">59.99</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-05-26</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-05-26</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>SVWZ+ERSTATTUNG H&amp;M RETOURE</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Maximilian Musterfrau</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE00000000000000000000</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-12.30</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-02</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-02</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Bäckerei Schäfer</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-52.80</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-05</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-05</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>dm-drogerie markt GmbH</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-5.60</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-08</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-08</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Bäcker Brinker</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-23.40</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-09</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-09</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Shell Tankstelle</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-15.75</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-13</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-13</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Food Lounge GmbH</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-31.20</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-17</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-17</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Trattoria Roma</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-15.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-21</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-21</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>CineStar Frankfurt</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-42.50</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-22</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-22</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>PMNT-POSD-STDO</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>OBI GmbH</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-45.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-03</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-03</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Netflix Abo</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Netflix International B.V.</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">2150.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-04</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-04</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>GEHALT APRIL 2024</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Musterfirma GmbH</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE89370400440532013000</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-89.90</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-06</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-06</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Mobilfunkvertrag Juni</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Vodafone GmbH</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-65.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-07</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-07</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Dauerauftrag Mietnebenkosten</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Hausverwaltung Müller</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE43500105171234567890</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-139.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-10</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-10</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Online-Bestellung Fahrradteile</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Fahrrad XXL</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE36500105170647474747</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-750.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-11</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-11</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Miete Juni</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Vermieter Schmidt</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE55500105170123456789</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="USD">-9.99</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-12</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-12</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Spotify Abo</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Spotify AB</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-84.50</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-14</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-14</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Rechnung Zahnarzt</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Zahnarztpraxis Dr. Müller</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE23500105170000005555</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">48.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-15</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-15</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Rückerstattung Kundenservice</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Zalando SE</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE72500105170012345678</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="CHF">-20.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-16</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-16</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Spende Aktion Schweiz Hilft</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Aktion Schweiz Hilft</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <IBAN>DE14500105170000001234</IBAN>
+                </Id>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">-120.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-18</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-18</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Hausratversicherung</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Allianz Versicherung</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">2150.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-19</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-19</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>GEHALT JUNI 2024</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Musterfirma GmbH</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE89370400440532013000</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="USD">-8.90</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-20</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-20</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>App Store Kauf</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Cdtr>
+                <Nm>Apple Services</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id/>
+              </CdtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">75.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2024-06-23</Dt>
+        </BookgDt>
+        <ValDt>
+          <Dt>2024-06-23</Dt>
+        </ValDt>
+        <NtryDtls>
+          <TxDtls>
+            <RmtInf>
+              <Ustrd>Verkauf eBay Kleinanzeigen</Ustrd>
+            </RmtInf>
+            <RltdPties>
+              <Dbtr>
+                <Nm>Privatperson</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <IBAN>DE75512108001245123456</IBAN>
+                </Id>
+              </DbtrAcct>
+            </RltdPties>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

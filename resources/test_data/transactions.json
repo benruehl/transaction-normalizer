@@ -1,0 +1,306 @@
+[
+  {
+    "bookingDate": "2024-05-28",
+    "valueDate": "2024-05-27",
+    "amount": -85.12,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-ICDT-STDO",
+    "creditorName": "Amazon EU SARL"
+  },
+  {
+    "bookingDate": "2024-06-01",
+    "valueDate": "2024-06-01",
+    "amount": 2150.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+SVWX+GEHALT MAI 2024 MAX MUSTERMANN",
+    "transactionCode": "PMNT-IRCT-STDO",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Musterfirma GmbH",
+    "debtorIban": "DE89370400440532013000"
+  },
+  {
+    "bookingDate": "2024-05-27",
+    "valueDate": "2024-05-27",
+    "amount": -69.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+SVWZ+H&M ONLINE ÜBERWEISUNG 123456",
+    "transactionCode": "PMNT-RCDT-STDO",
+    "creditorName": "H&M Hennes & Mauritz B.V. & Co. KG",
+    "creditorIban": "DE12500105170648489890",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-05-26",
+    "valueDate": "2024-05-26",
+    "amount": 59.99,
+    "currency": "EUR",
+    "purpose": "SVWZ+SVWZ+ERSTATTUNG H&M RETOURE",
+    "transactionCode": "PMNT-IRCT-STDO",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Maximilian Musterfrau",
+    "debtorIban": "DE00000000000000000000"
+  },
+  {
+    "bookingDate": "2024-06-02",
+    "valueDate": "2024-06-02",
+    "amount": -12.3,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "Bäckerei Schäfer"
+  },
+  {
+    "bookingDate": "2024-06-05",
+    "valueDate": "2024-06-05",
+    "amount": -52.8,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "dm-drogerie markt GmbH"
+  },
+  {
+    "bookingDate": "2024-06-08",
+    "valueDate": "2024-06-08",
+    "amount": -5.6,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "Bäcker Brinker"
+  },
+  {
+    "bookingDate": "2024-06-09",
+    "valueDate": "2024-06-09",
+    "amount": -23.4,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "Shell Tankstelle"
+  },
+  {
+    "bookingDate": "2024-06-13",
+    "valueDate": "2024-06-13",
+    "amount": -15.75,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "Food Lounge GmbH"
+  },
+  {
+    "bookingDate": "2024-06-17",
+    "valueDate": "2024-06-17",
+    "amount": -31.2,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "Trattoria Roma"
+  },
+  {
+    "bookingDate": "2024-06-21",
+    "valueDate": "2024-06-21",
+    "amount": -15.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "CineStar Frankfurt"
+  },
+  {
+    "bookingDate": "2024-06-22",
+    "valueDate": "2024-06-22",
+    "amount": -42.5,
+    "currency": "EUR",
+    "purpose": "SVWZ+",
+    "transactionCode": "PMNT-POSD-STDO",
+    "creditorName": "OBI GmbH"
+  },
+  {
+    "bookingDate": "2024-06-03",
+    "valueDate": "2024-06-03",
+    "amount": -45.0,
+    "currency": "USD",
+    "purpose": "SVWZ+NETFLIX ABO",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "Netflix International B.V."
+  },
+  {
+    "bookingDate": "2024-06-04",
+    "valueDate": "2024-06-04",
+    "amount": 2150.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+GEHALT APRIL 2024",
+    "transactionCode": "PMNT-IRCT-STDO",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Musterfirma GmbH",
+    "debtorIban": "DE89370400440532013000"
+  },
+  {
+    "bookingDate": "2024-06-06",
+    "valueDate": "2024-06-06",
+    "amount": -89.9,
+    "currency": "EUR",
+    "purpose": "SVWZ+MOBILFUNKVERTRAG JUNI",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "Vodafone GmbH"
+  },
+  {
+    "bookingDate": "2024-06-07",
+    "valueDate": "2024-06-07",
+    "amount": -65.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+DAUERAUFTRAG MIETNEBENKOSTEN",
+    "transactionCode": "PMNT-RCDT-RENT",
+    "creditorName": "Hausverwaltung Müller",
+    "creditorIban": "DE43500105171234567890",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-06-10",
+    "valueDate": "2024-06-10",
+    "amount": -139.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+ONLINE-BESTELLUNG FAHRRADTEILE",
+    "transactionCode": "PMNT-RCDT-STDO",
+    "creditorName": "Fahrrad XXL",
+    "creditorIban": "DE36500105170647474747",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-06-11",
+    "valueDate": "2024-06-11",
+    "amount": -750.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+MIETE JUNI",
+    "transactionCode": "PMNT-RCDT-RENT",
+    "creditorName": "Vermieter Schmidt",
+    "creditorIban": "DE55500105170123456789",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-06-12",
+    "valueDate": "2024-06-12",
+    "amount": -9.99,
+    "currency": "EUR",
+    "purpose": "SVWZ+SPOTIFY ABO",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "Spotify AB"
+  },
+  {
+    "bookingDate": "2024-06-14",
+    "valueDate": "2024-06-14",
+    "amount": -84.5,
+    "currency": "EUR",
+    "purpose": "SVWZ+RECHNUNG ZAHNARZT",
+    "transactionCode": "PMNT-RCDT-MEDC",
+    "creditorName": "Zahnarztpraxis Dr. Müller",
+    "creditorIban": "DE23500105170000005555",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-06-15",
+    "valueDate": "2024-06-15",
+    "amount": 48.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+RÜCKERSTATTUNG KUNDENSERVICE",
+    "transactionCode": "PMNT-IRCT-STDO",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Zalando SE",
+    "debtorIban": "DE72500105170012345678"
+  },
+  {
+    "bookingDate": "2024-06-16",
+    "valueDate": "2024-06-16",
+    "amount": -20.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+SPENDE AKTION DEUTSCHLAND HILFT",
+    "transactionCode": "PMNT-RCDT-CHAR",
+    "creditorName": "Aktion Deutschland Hilft",
+    "creditorIban": "DE14500105170000001234",
+    "debtorIban": "DE44500105170648489890"
+  },
+  {
+    "bookingDate": "2024-06-18",
+    "valueDate": "2024-06-18",
+    "amount": -120.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+HAUSRATVERSICHERUNG",
+    "transactionCode": "PMNT-DDOC-INSC",
+    "creditorName": "Allianz Versicherung"
+  },
+  {
+    "bookingDate": "2024-06-19",
+    "valueDate": "2024-06-19",
+    "amount": 2150.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+GEHALT JUNI 2024",
+    "transactionCode": "PMNT-IRCT-STDO",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Musterfirma GmbH",
+    "debtorIban": "DE89370400440532013000"
+  },
+  {
+    "bookingDate": "2024-06-20",
+    "valueDate": "2024-06-20",
+    "amount": -8.9,
+    "currency": "USD",
+    "purpose": "SVWZ+APP STORE KAUF",
+    "transactionCode": "PMNT-ICDT-DIGT",
+    "creditorName": "Apple Services"
+  },
+  {
+    "bookingDate": "2024-06-20",
+    "valueDate": "2024-05-30",
+    "amount": -30.0,
+    "currency": "USD",
+    "transactionCode": "PMNT-ICDT-DIGT",
+    "creditorName": "In And Out Burger"
+  },
+  {
+    "bookingDate": "2024-06-20",
+    "valueDate": "2024-05-30",
+    "amount": -30.0,
+    "currency": "CHF",
+    "transactionCode": "PMNT-ICDT-DIGT",
+    "creditorName": "Emmentaler Gmbh"
+  },
+  {
+    "bookingDate": "2024-06-23",
+    "valueDate": "2024-06-23",
+    "amount": 75.0,
+    "currency": "EUR",
+    "purpose": "SVWZ+VERKAUF EBAY KLEINANZEIGEN",
+    "transactionCode": "PMNT-IRCT-OTHR",
+    "creditorIban": "DE44500105170648489890",
+    "debtorName": "Privatperson",
+    "debtorIban": "DE75512108001245123456"
+  },
+  {
+    "bookingDate": "2024-06-24",
+    "valueDate": "2024-06-24",
+    "amount": -39.9,
+    "currency": "CHF",
+    "purpose": "MREF+T-MANDATE-001/nCRED+DE98ZZZ09999999999/nSVWZ+MOBILFUNKVERTRAG JUNI 2024",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "Telekom Deutschland GmbH",
+    "creditorIban": "DE12500105170600000001"
+  },
+  {
+    "bookingDate": "2024-06-25",
+    "valueDate": "2024-06-25",
+    "amount": -49.9,
+    "currency": "EUR",
+    "purpose": "MREF+FF-MANDATE-456/nCRED+DE55ZZZ01234567890/nSVWZ+FITNESSSTUDIO BEITRAG JUNI",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "Fitness First GmbH",
+    "creditorIban": "DE12500105170600000002"
+  },
+  {
+    "bookingDate": "2024-06-26",
+    "valueDate": "2024-06-26",
+    "amount": -88.75,
+    "currency": "EUR",
+    "purpose": "MREF+HUK-MANDATE-789/nCRED+DE11ZZZ12345678901/nSVWZ+KFZ-VERSICHERUNG JUNI 2024",
+    "transactionCode": "PMNT-DDOC-STDO",
+    "creditorName": "HUK-Coburg Versicherung",
+    "creditorIban": "DE12500105170600000003"
+  }
+]
