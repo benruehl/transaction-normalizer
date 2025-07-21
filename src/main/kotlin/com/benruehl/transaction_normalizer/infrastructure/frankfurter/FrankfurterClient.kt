@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 
 @Service
 class FrankfurterClient(
-    private val baseUrl: String = "https://frankfurter.dev/"
+    private val baseUrl: String = "https://api.frankfurter.dev/"
 ) : CurrencyClient {
 
     private val logger = KotlinLogging.logger {}
